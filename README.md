@@ -1,4 +1,4 @@
-# AMD Wordpress Soloution
+# AMD Wordpress Solution
 
 ## Wordpress Solution design
 
