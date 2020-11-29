@@ -237,7 +237,7 @@ Output
 
 ![Alt text](images/kube-nodes.png?raw=true "Wordpress")
 
-### Enable horizontal auto scaling
+### 14 Enable horizontal auto scaling
 
 Login to bastion server and navigate to /home/ec2-user.
 
@@ -268,3 +268,16 @@ $ terraform destroy
 Destroy complete! Resources: 82 destroyed.
 
 ```
+
+---------------------------------------------
+### TO-DO
+
+* ALB ingress controller to handle traffic and rule based load balancing
+* SSL support for WordPress
+* Configure cloudwatch logs to wordpress pods
+* Configure log alerts
+* Configure cloudwatch metrics alerts
+* Configure CI/CD process using AWS codebuild 
+* Setup ECR to store wordpress images
+* Enable sticky session using ALB
+* Perform performance test using jmeter
