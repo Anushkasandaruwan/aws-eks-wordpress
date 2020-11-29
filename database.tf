@@ -13,7 +13,7 @@ module "db" {
   engine_version    = var.db_engine_version
   instance_class    = var.db_instance_type
   allocated_storage = var.db_allocated_storage
-  multi_az          = false
+  multi_az          = true
   name              = local.master_database_name
   username          = var.db_master_username
   password          = var.db_master_password
