@@ -5,17 +5,17 @@ variable "region" {
 
 variable "eks_cluster_name" {
   type    = string
-  default = "amd-elk-cluster"
+  default = "adm-elk-cluster"
 }
 
 variable "vpc_name" {
   type    = string
-  default = "amd-practical-interview-vpc"
+  default = "adm-practical-interview-vpc"
 }
 
 variable "environment" {
   type    = string
-  default = "amd-practical-interview"
+  default = "adm-practical-interview"
 }
 
 variable "key_pair_name" {
@@ -51,7 +51,7 @@ variable "db_master_password" {
 
 variable "db_master_username" {
   type    = string
-  default = "amd_master"
+  default = "adm_master"
 }
 
 variable "db_engine" {

@@ -1,4 +1,4 @@
-# AMD Wordpress Solution
+# ADM Wordpress Solution
 
 ## Wordpress Solution design
 
@@ -175,8 +175,8 @@ bastion_public_IP = [
   "18.191.46.157",
 ]
 cluster_endpoint = https://33DD99BE6C094E8D1C4DB9E02CC2B0AB.gr7.us-east-2.eks.amazonaws.com
-database_endpoint = amd-elk-cluster.crxjg1bavqk4.us-east-2.rds.amazonaws.com:3306
-wordpress_lb = amd-elk-cluster-lb-1500344054.us-east-2.elb.amazonaws.com
+database_endpoint = adm-elk-cluster.crxjg1bavqk4.us-east-2.rds.amazonaws.com:3306
+wordpress_lb = adm-elk-cluster-lb-1500344054.us-east-2.elb.amazonaws.com
 
 ```
 
@@ -213,7 +213,7 @@ Enter following command to login to RDS. Please make sure to replace <RDS ENDPOI
 PASSWORD :- c2LZMAk3w6LGv3dX!
 
 ```shell
-mysql -u amd_master -h <RDS ENDPOINT NAME> -p
+mysql -u adm_master -h <RDS ENDPOINT NAME> -p
 ```
 
 ![Alt text](images/db.png?raw=true "Wordpress")
@@ -224,7 +224,7 @@ mysql -u amd_master -h <RDS ENDPOINT NAME> -p
 Login to the bastion server and Configure AWS CLI (please refer to step 3)   
 
 ```shell
-$ aws eks --region us-east-2 update-kubeconfig --name amd-elk-cluster
+$ aws eks --region us-east-2 update-kubeconfig --name adm-elk-cluster
 ```
  
  Test kubectl authentication
