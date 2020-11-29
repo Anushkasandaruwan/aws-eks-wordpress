@@ -24,9 +24,9 @@ module "eks" {
       name                          = "worker-group-1"
       instance_type                 = "t2.small"
       additional_userdata           = "echo worker group 01"
-      asg_desired_capacity          = 1
-      asg_max_size                  = 3
-      asg_min_size                  = 1
+      desired_capacity          = 1
+      max_size                  = 3
+      min_size                  = 1
       eni_delete                    = true
       key_name                      = var.key_pair_name
       load_balancers                = ["${var.eks_cluster_name}-lb"]
@@ -35,24 +35,24 @@ module "eks" {
     {
       name                          = "worker-group-2"
       instance_type                 = "t2.medium"
-      asg_max_size                  = 3
-      asg_min_size                  = 1
+      max_size                  = 3
+      min_size                  = 1
       additional_userdata           = "echo worker group 02"
       eni_delete                    = true
       additional_security_group_ids = [aws_security_group.worker_group_mgmt.id]
-      asg_desired_capacity          = 1
+      desired_capacity          = 1
       load_balancers                = ["${var.eks_cluster_name}-lb"]
       key_name                      = var.key_pair_name
     },
     {
       name                          = "worker-group-3"
       instance_type                 = "t2.medium"
-      asg_max_size                  = 3
-      asg_min_size                  = 1
+      max_size                  = 3
+      min_size                  = 1
       additional_userdata           = "echo worker group 03"
       eni_delete                    = true
       additional_security_group_ids = [aws_security_group.worker_group_mgmt.id]
-      asg_desired_capacity          = 1
+      desired_capacity          = 1
       load_balancers                = ["${var.eks_cluster_name}-lb"]
       key_name                      = var.key_pair_name
     }

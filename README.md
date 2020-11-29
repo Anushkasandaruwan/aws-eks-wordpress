@@ -22,20 +22,20 @@ Every Security Group works in a similar fashion to a firewall as it carries a se
 
 There are three auto scaling groups in this environment which will help scale instances in each availability zone. All these eks worker autoscaling groups are attached to one elb which contoles tafric to wordpress web application. 
 
-In this environment we used dynamic scaling to increase desired nodes in the auto scaling group. We are using target tracking scaling policy to keep the average aggregate CPU utilization of your Auto Scaling group at 50 percent. 
+In this environment I used dynamic scaling to increase desired nodes in the auto scaling group. I are using target tracking scaling policy to keep the average aggregate CPU utilization of your Auto Scaling group at 50 percent. 
 
-We used Horizontal Pod Autoscaler to increase the number of pods based on cpu utilization of pods.Horizontal Pod Autoscaler automatically scales the number of Pods in a  deployment based on observed CPU utilization.
+I used Horizontal Pod Autoscaler to increase the number of pods based on cpu utilization of pods.Horizontal Pod Autoscaler automatically scales the number of Pods in a  deployment based on observed CPU utilization.
 
-We used persistent storage in Amazon EKS which will help scale pods and all the file systems will be syncyed. We used Amazon EFS CSI driver to create persistent storage.
+I used persistent storage in Amazon EKS which will help scale pods and all the file systems will be syncyed. I used Amazon EFS CSI driver to create persistent storage.
 
-We didn't have time to cover session management during this project.
+I didn't have time to cover session management during this project.
 
 
 ### High availability(HA)
 
 High Availability describes systems that are dependable enough to operate continuously without failing
 
-We used three avilability zones to maintain HA in this setup. RDS is setup as Multi AZ deployment which will keep standby RDS if something happends to master RDS. 
+I used three avilability zones to maintain HA in this setup. RDS is setup as Multi AZ deployment which will keep standby RDS if something happends to master RDS. 
 
 
 ## Infrustucture provisiioning 
@@ -206,7 +206,7 @@ ssh -i aws_eks_cluster_master_key.pem ec2-user@<BASTION PUBLIC IP>
 
 ### 12. Login to database
 
-If you need to login to database you should first login to bastion serve since we have controlled public access to RDS. 
+If you need to login to database you should first login to bastion serve since I have controlled public access to RDS. 
 
 Enter following command to login to RDS. Please make sure to replace <RDS ENDPOINT NAME> with terraform output value of database_endpoint.
 
@@ -268,6 +268,13 @@ $ terraform destroy
 Destroy complete! Resources: 82 destroyed.
 
 ```
+
+### Known Issues in destroy
+
+I have noticed some issues when destroying ELB. Please delete ELB manually and perform terraform destroy if you face this issue.
+
+_____________________________________________
+
 
 ---------------------------------------------
 ### TO-DO
